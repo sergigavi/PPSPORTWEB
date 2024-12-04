@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSport.Pages.ReservasPage"
+             Title=""
+            Shell.NavBarIsVisible="False"
+            NavigationPage.HasNavigationBar="False"
+             Appearing="ContentPage_Appearing">
+
+    <!--<ScrollView Orientation="Vertical" BackgroundColor="Transparent" Margin="5">-->
+    <ScrollView Orientation="Vertical" BackgroundColor="Transparent" Margin="0">
+
+        <VerticalStackLayout Padding="0" Margin="5" BackgroundColor="Transparent">
+
+            <Label Text="Seleccione el polideportivo donde desea realizar la reserva:" FontFamily="MontserratMedium" FontAttributes="Bold" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="18" Margin="20, 15, 20, 5"/>
+
+            <ActivityIndicator x:Name="aiCarga" Color="ForestGreen" IsRunning="True" IsEnabled="True" IsVisible="True"/>
+
+            <ScrollView Orientation="Horizontal">
+
+                <HorizontalStackLayout>
+
+                    <Entry x:Name="entryBusqueda" WidthRequest="200" Placeholder="Búsqueda..." TextChanged="entryBusqueda_TextChanged"/>
+                    
+                </HorizontalStackLayout>
+
+            </ScrollView>
+
+            <ListView x:Name="lvPolideportivos" IsPullToRefreshEnabled="False" VerticalOptions="Center"
+    SelectionMode="Single" Margin="5,5,5,25" ItemSelected="lvPolideportivos_ItemSelected" RowHeight="140" HasUnevenRows="False" BackgroundColor="Transparent" >
+
+                <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <ViewCell>
+
+                        <Grid Padding="0,0" BackgroundColor="Transparent" Margin="0, 1">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height=".60*" />
+                                <RowDefinition Height=".40*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".45*" />
+                                <ColumnDefinition Width=".55*" />
+                            </Grid.ColumnDefinitions>
+
+                            <ImageButton Margin="5" Aspect="AspectFill" Source="{Binding foto}" />
+
+                            <Label x:Name="lblNombre"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontFamily="MontserratMedium"
+                            Margin="0,0,0,0"
+                            TextColor="Black"
+                            FontSize="14"
+                            Text="{Binding nombre}"
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"/>
+
+                            <VerticalStackLayout Grid.Row="0" Grid.Column="1" Margin="5,5" HorizontalOptions="Center" VerticalOptions="Center">
+
+                                <Label x:Name="lblDireccion"
+                                FontFamily="MontserratMedium"
+                                Margin="0,0,0,0"
+                                TextColor="Black"
+                                FontSize="14"
+                                Text="{Binding direccion}"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
+
+                                <Label x:Name="lblHorario"
+                                FontFamily="MontserratMedium"
+                                Margin="0,0,0,0"
+                                TextColor="Black"
+                                FontSize="14"
+                                Text="{Binding cp}"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
+
+                            </VerticalStackLayout>
+
+                            <HorizontalStackLayout Grid.Row="1" Grid.Column="1" Margin="5,5" HorizontalOptions="Center" VerticalOptions="Center">
+
+                                <Label Text="{Binding horario}" FontSize="12"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
+
+                            </HorizontalStackLayout>
+
+                        </Grid>
+
+                    </ViewCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        </VerticalStackLayout>
+
+        <!--<VerticalStackLayout>
+
+            <HorizontalStackLayout>
+                
+                
+                
+            </HorizontalStackLayout>
+
+            <Button x:Name="btnNuevaReserva" Text="Nueva Reserva" Clicked="btnNuevaReserva_Clicked" WidthRequest="65" HeightRequest="65" />
+
+            <ListView x:Name="lvReservas" IsPullToRefreshEnabled="False" Refreshing="lvReservas_Refreshing" VerticalOptions="Fill" MinimumHeightRequest="300"
+                SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvReservas_ItemSelected" RowHeight="60" HasUnevenRows="False" >
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <Grid Padding="0,5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".35*" />
+                                    <ColumnDefinition Width=".35*" />
+                                    <ColumnDefinition Width=".15*" />
+                                    <ColumnDefinition Width=".15*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label x:Name="lblDeporte"
+                                    FontFamily="MontserratMedium"
+                                    Margin="5,0,0,0"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="Grey"
+                                    FontSize="14"
+                                    Text="{Binding Deporte_Id}"/>
+                                
+                                <Label x:Name="lblPista"
+                                    Grid.Column="1"
+                                    FontFamily="MontserratMedium"
+                                    Margin="5,0,0,0"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="Grey"
+                                    FontSize="14"
+                                    Text="{Binding Pista_Id}"/>
+                                
+                                <Label x:Name="lblHoraInicio"
+                                    Grid.Column="2"
+                                    FontFamily="MontserratMedium"
+                                    Margin="5,0,0,0"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="Grey"
+                                    FontSize="14"
+                                    Text="{Binding HoraInicio}"/>
+                                
+                                <Label x:Name="lblHoraFin"
+                                    Grid.Column="3"
+                                    FontFamily="MontserratMedium"
+                                    Margin="5,0,0,0"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="Grey"
+                                    FontSize="14"
+                                    Text="{Binding HoraFin}"/>
+                                
+                                
+
+                            </Grid>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </VerticalStackLayout>-->
+
+    </ScrollView>
+    
+</ContentPage>
+

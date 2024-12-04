@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSport.MainPage"
+             Appearing="ContentPage_Appearing"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <HorizontalStackLayout Margin="0, 10, 0 , -50" Spacing="180">
+
+                <Button x:Name="btncerrarSesion" Text="X" Clicked="btncerrarSesion_Clicked" HeightRequest="40" WidthRequest="40" HorizontalOptions="Start" FontAttributes="Bold" FontSize="22" BackgroundColor="DarkRed" Padding="0" Margin="0" CornerRadius="25" BorderWidth="1.4"/>
+                <Button x:Name="btnPerfil" Text="Editar perfil" Clicked="btnPerfil_Clicked" HeightRequest="30" WidthRequest="110" HorizontalOptions="End" FontSize="14" Padding="0" Margin="15,0,0,0" CornerRadius="25" BorderWidth="1.4"/>
+                
+            </HorizontalStackLayout>
+
+            <Image Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="240" WidthRequest="240" Source="psportlogosinfondo.png" />
+
+            <Label x:Name="lblNombre" Text="Bienvenid@" HorizontalOptions="Center" FontSize="22" FontAttributes="Bold" Margin="0,-10,0,10"/>
+
+            <Button x:Name="btnReservas" Text="Reservas" Clicked="btnReservas_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4"/>
+
+            <Button x:Name="btnCalendario" Text="Calendario" Clicked="btnCalendario_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4"/>
+
+            <Button x:Name="btnEquipos" Text="Equipos" Clicked="btnEquipos_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4"/>
+
+            <Button x:Name="btnTorneos" Text="Torneos" Clicked="btnTorneos_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4"/>
+
+
+        </VerticalStackLayout>
+        
+    </ScrollView>
+
+</ContentPage>

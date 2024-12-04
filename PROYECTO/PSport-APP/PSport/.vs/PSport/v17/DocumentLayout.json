@@ -1,0 +1,413 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\calendariopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\calendariopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\calendariopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\calendariopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\perfilpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\perfilpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\nuevareservapage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\nuevareservapage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\reservaspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\reservaspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\reservaspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\reservaspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\perfilpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\perfilpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\utils\\globales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:utils\\globales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\equipospage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\equipospage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\torneospage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\torneospage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\nuevareservapage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\nuevareservapage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\utils\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:utils\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\registerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\registerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\admin\\admgestionpistas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\admin\\admgestionpistas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\equipospage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\equipospage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|c:\\users\\sergio\\documents\\github\\playerplay-sport\\psport-app\\psport\\pages\\torneospage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C51C1EA3-9109-4952-996D-B3681BE2B62C}|PSport.csproj|solutionrelative:pages\\torneospage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Globales.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Utils\\Globales.cs",
+              "RelativeDocumentMoniker": "Utils\\Globales.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Utils\\Globales.cs",
+              "RelativeToolTip": "Utils\\Globales.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAC4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T17:47:46.672Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "APIController.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\APIController.cs",
+              "RelativeDocumentMoniker": "APIController.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\APIController.cs",
+              "RelativeToolTip": "APIController.cs",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAAAM8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T17:49:43.936Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CalendarioPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\CalendarioPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\CalendarioPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\CalendarioPage.xaml.cs",
+              "RelativeToolTip": "Pages\\CalendarioPage.xaml.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAmwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T16:55:58.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CalendarioPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\CalendarioPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\CalendarioPage.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\CalendarioPage.xaml",
+              "RelativeToolTip": "Pages\\CalendarioPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-04T16:56:07.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Utils\\Utils.cs",
+              "RelativeDocumentMoniker": "Utils\\Utils.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Utils\\Utils.cs",
+              "RelativeToolTip": "Utils\\Utils.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAJoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T20:13:31.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EquiposPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\EquiposPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\EquiposPage.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\EquiposPage.xaml",
+              "RelativeToolTip": "Pages\\EquiposPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAACfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-01T20:39:09.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "TorneosPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\TorneosPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\TorneosPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\TorneosPage.xaml.cs",
+              "RelativeToolTip": "Pages\\TorneosPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T20:30:28.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TorneosPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\TorneosPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\TorneosPage.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\TorneosPage.xaml",
+              "RelativeToolTip": "Pages\\TorneosPage.xaml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswDQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-01T20:30:14.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReservasPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\ReservasPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\ReservasPage.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\ReservasPage.xaml",
+              "RelativeToolTip": "Pages\\ReservasPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-13T17:19:24.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReservasPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\ReservasPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\ReservasPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\ReservasPage.xaml.cs",
+              "RelativeToolTip": "Pages\\ReservasPage.xaml.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAJQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:46:49.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AdmGestionPistas.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\Admin\\AdmGestionPistas.xaml",
+              "RelativeDocumentMoniker": "Pages\\Admin\\AdmGestionPistas.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\Admin\\AdmGestionPistas.xaml",
+              "RelativeToolTip": "Pages\\Admin\\AdmGestionPistas.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-26T18:25:15.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NuevaReservaPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\NuevaReservaPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\NuevaReservaPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\NuevaReservaPage.xaml.cs",
+              "RelativeToolTip": "Pages\\NuevaReservaPage.xaml.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAQwHMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:11:20.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NuevaReservaPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\NuevaReservaPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\NuevaReservaPage.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\NuevaReservaPage.xaml",
+              "RelativeToolTip": "Pages\\NuevaReservaPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-25T15:03:48.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PerfilPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\PerfilPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\PerfilPage.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\PerfilPage.xaml",
+              "RelativeToolTip": "Pages\\PerfilPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAADXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-19T16:17:01.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PerfilPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\PerfilPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\PerfilPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\PerfilPage.xaml.cs",
+              "RelativeToolTip": "Pages\\PerfilPage.xaml.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAApwEYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T16:31:46.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EquiposPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\EquiposPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\EquiposPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\EquiposPage.xaml.cs",
+              "RelativeToolTip": "Pages\\EquiposPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T20:41:38.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-02T15:09:36.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RegisterPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\RegisterPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\RegisterPage.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\RegisterPage.xaml",
+              "RelativeToolTip": "Pages\\RegisterPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAACRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-20T17:43:06.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RegisterPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\RegisterPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\RegisterPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\RegisterPage.xaml.cs",
+              "RelativeToolTip": "Pages\\RegisterPage.xaml.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAAG4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T17:42:49.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\LoginPage.xaml",
+              "RelativeToolTip": "Pages\\LoginPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAACfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-20T15:02:42.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\Pages\\LoginPage.xaml.cs",
+              "RelativeToolTip": "Pages\\LoginPage.xaml.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAAAIAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T17:40:45.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MainPage.xaml",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\MainPage.xaml",
+              "RelativeToolTip": "MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-20T17:24:37.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Sergio\\Documents\\GitHub\\PlayerPlay-Sport\\PSport-APP\\PSport\\MainPage.xaml.cs",
+              "RelativeToolTip": "MainPage.xaml.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAAAIsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T17:24:36.383Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

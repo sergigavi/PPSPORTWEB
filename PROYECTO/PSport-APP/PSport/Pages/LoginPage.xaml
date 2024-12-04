@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="PSport.Pages.LoginPage"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior  IsVisible="False" />
+    </Shell.BackButtonBehavior>
+
+    <VerticalStackLayout Spacing="10" Margin="5" Padding="20, 5" HorizontalOptions="Center">
+
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0, 20, 0, 0">
+
+            <Label Text="¡Bienvenido a PPSPORT!" FontSize="28" HorizontalTextAlignment="Center"/>
+            <Label Text="Tu aplicación de reserva de pistas" FontSize="16" HorizontalTextAlignment="Center"/>
+            <Label Text="¡y mucho más!" FontSize="16" HorizontalTextAlignment="Center"/>
+
+        </VerticalStackLayout>
+
+        <ImageButton Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="240" WidthRequest="240" Source="psportlogosinfondo.png" BackgroundColor="Transparent" />
+
+        <VerticalStackLayout Margin="0" Spacing="5">
+
+            <Entry x:Name="entryUsuario" Placeholder="Nombre de usuario" PlaceholderColor="Grey" HeightRequest="60" Keyboard="Email" FontSize="18" />
+            <Entry x:Name="entryContraseña" Placeholder="Contraseña" PlaceholderColor="Grey" HeightRequest="60" IsPassword="True" FontSize="18"  />
+            
+        </VerticalStackLayout>
+
+        <Button x:Name="btnEntrar" Margin="0, 30, 0, 0" Text="Entrar" Clicked="btnEntrar_Clicked" Padding="0" FontSize="20" CornerRadius="25" BorderWidth="1.4" />
+
+        <ActivityIndicator x:Name="ai" IsVisible="False" IsEnabled="False" IsRunning="False" Color="Green" Margin="0, 20,0,0"/>
+
+        <ImageButton x:Name="btnHuella" Margin="10, 25, 10, 15" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="60" WidthRequest="60" Source="fingerprint.png" Clicked="btnHuella_Clicked" BackgroundColor="Transparent"/>
+
+        <Button x:Name="btnRegistro" Margin="0,15,0,0" Text="Registrarse" FontAttributes="None" BackgroundColor="Transparent" TextColor="Black" Clicked="btnRegistro_Clicked" Padding="0" FontSize="13"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

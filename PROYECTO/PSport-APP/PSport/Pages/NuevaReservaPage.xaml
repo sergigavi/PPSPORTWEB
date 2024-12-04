@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSport.Pages.NuevaReservaPage"
+             Appearing="ContentPage_Appearing"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ScrollView>
+
+        <VerticalStackLayout Spacing="15" Margin="20,10">
+
+            <Label Text="RESERVA DE PISTA" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="24"/>
+
+            <Image Margin="0, -15" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="200" WidthRequest="200" Source="psportlogosinfondo.png" BackgroundColor="Transparent" />
+
+            <Label  Text="Se va a realizar una nueva reserva de pista en:"/>
+            <Label x:Name="lblNombrePoli" Text="" FontSize="20" FontAttributes="Bold" Margin="0, -10" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+            <Button x:Name="btnMaps" TextColor="Blue" Text="Ver en MAPS" BackgroundColor="Transparent" Clicked="btnMaps_Clicked"/>
+
+            <Label Text="Seleccione pista:"/>
+            <Picker x:Name="pickerPista" SelectedIndexChanged="pickerPista_SelectedIndexChanged" />
+            
+            <Label Text="Seleccione día:"/>
+            <DatePicker x:Name="datePickerDia" DateSelected="datePickerDia_DateSelected" Margin="0,-10,0,0" FontSize="14" />
+
+            <VerticalStackLayout x:Name="StackOpciones" IsEnabled="False" IsVisible="False" Spacing="5">
+
+                <Label x:Name="lblHorasLibres" Text="Horas Libres:"/>
+
+                <Label Text="Hora inicio reserva:"/>
+                <TimePicker x:Name="pickerHoraInicio"/>
+
+                <Label Text="Hora fin reserva:"/>
+                <TimePicker x:Name="pickerHoraFin"/>
+
+                <Button x:Name="btnReservar" Text="RESERVAR" BorderWidth="1.4" BorderColor="Black" FontSize="18" Clicked="btnReservar_Clicked" CornerRadius="25" Margin="0,10,0,0"/>
+                
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+        
+    </ScrollView>
+    
+</ContentPage>

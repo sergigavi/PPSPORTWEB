@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSport.Pages.PerfilPage"
+             Title=""
+             Appearing="ContentPage_Appearing"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+
+        <VerticalStackLayout Spacing="15" Margin="25,15">
+
+            <Image Margin="0, -25,0,-15" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="200" WidthRequest="200" Source="psportlogosinfondo.png" BackgroundColor="Transparent" />
+
+            <Label Text="Paleta seleccionada:" Margin="3,0,0,-20" FontAttributes="Bold" FontSize="15"/>
+            <Picker x:Name="PickerPaleta" SelectedIndexChanged="PickerPaleta_SelectedIndexChanged" FontSize="15"/>
+
+            <Label Text="DNI:" Margin="3,0,0,-20" FontSize="15" FontAttributes="Bold"/>
+            <Entry x:Name="lblDni" FontSize="15"/>
+
+            <Label Text="Nombre:" Margin="3,0,0,-20" FontSize="15" FontAttributes="Bold"/>
+            <Entry x:Name="lblNombre" FontSize="15"/>
+
+            <Label Text="Apellidos:" Margin="3,0,0,-20" FontSize="15" FontAttributes="Bold"/>
+            <Entry x:Name="lblApellidos" FontSize="15"/>
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Fecha de nacimiento:" Margin="3,0,0,-20" FontSize="15" FontAttributes="Bold"/>
+                    <Entry x:Name="lblFechaNac" FontSize="15"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1" Spacing="15">
+                    <Label Text="Rol:" Margin="3,0,0,-20" FontSize="15" FontAttributes="Bold"/>
+                    <Entry x:Name="lblRol" FontSize="15"/>
+                </VerticalStackLayout>
+
+            </Grid>
+
+            <Label Text="Email:" Margin="3,0,0,-20" FontSize="15" FontAttributes="Bold"/>
+            <Entry x:Name="lblCorreo" FontSize="15"/>
+
+            <Button x:Name="btnEditar" Clicked="btnEditar_Clicked" Text="Editar Perfil" CornerRadius="25" BorderWidth="1.4" Margin="20" FontSize="18"/>
+            
+        </VerticalStackLayout>
+
+    </ScrollView>
+        
+</ContentPage>
