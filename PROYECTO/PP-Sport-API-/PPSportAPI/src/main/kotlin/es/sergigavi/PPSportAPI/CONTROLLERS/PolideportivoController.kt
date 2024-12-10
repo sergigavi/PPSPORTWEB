@@ -7,6 +7,7 @@ import es.sergigavi.PPSportAPI.MODEL.DTO.PistaDTO
 import es.sergigavi.PPSportAPI.MODEL.DTO.ReservaDTO
 import es.sergigavi.PPSportAPI.MODEL.REQUEST.PistaRequest
 import es.sergigavi.PPSportAPI.MODEL.REQUEST.PolideportivoRequest
+import es.sergigavi.PPSportAPI.SERVICES.IItemService
 import es.sergigavi.PPSportAPI.SERVICES.IPistaService
 import es.sergigavi.PPSportAPI.SERVICES.IPolideportivoService
 import es.sergigavi.PPSportAPI.SERVICES.IReservaService
@@ -33,7 +34,9 @@ class PolideportivoController {
     @Autowired
     lateinit var pistaService: IPistaService;
     @Autowired
-    lateinit var reservaService: IReservaService;
+    lateinit var reservaService: IReservaService
+    @Autowired
+    lateinit var itemService: IItemService
 
     @GetMapping("/todos")
     fun getAll(): ResponseEntity<Iterable<Polideportivo>> {
@@ -46,7 +49,7 @@ class PolideportivoController {
     }
 
     @GetMapping("/pistas")
-    fun getPistas(): ResponseEntity<Iterable<Pista>> = ResponseEntity(this.pistaService.findAll(), HttpStatus.OK)
+    fun getPistas(): ResponseEntity<Iterable<PistaDTO>> = ResponseEntity(this.pistaService.findAll(), HttpStatus.OK)
 
     @GetMapping("/{id}")
     fun getPolideportivo(@PathVariable id: UUID): ResponseEntity<Polideportivo> {
@@ -74,6 +77,7 @@ class PolideportivoController {
             ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
+
     @GetMapping("/pistas/{idPista}")
     fun getPista(@PathVariable id: UUID): ResponseEntity<Pista> {
         try {
@@ -91,7 +95,7 @@ class PolideportivoController {
     @GetMapping("/pistas/{pistaID}/reservas")
     fun getReservaDePistaByFecha(@PathVariable pistaID: UUID,@RequestParam fecha: LocalDate): ResponseEntity<Iterable<ReservaDTO>> {
         try {
-            val reservas = reservaService.findByFechaAndPistaId(fecha,pistaID)
+            val reservas = reservaService.findAllByFechaAndPistaId(fecha,pistaID)
             return ResponseEntity(reservas, HttpStatus.OK)
 
         } catch (e: Exception) {
@@ -284,8 +288,114 @@ class PolideportivoController {
         return instalaciones
     }
 
+    @PostMapping("/{polideportivoId}/agregar-item")
+    fun agregarItemAPolideportivo(@PathVariable polideportivoId: UUID, @RequestBody itemRequest: ItemRequest):ResponseEntity<Item>{
+        try {
+
+            val polideportivo = polideportivoService.findById(polideportivoId)
+
+            if (polideportivo.isEmpty){
+                return ResponseEntity(HttpStatus.BAD_REQUEST)
+            }
+
+            val itemOptional = itemService.findByNombreAndPolideportivoId(itemRequest.nombre, polideportivoId)
+
+            if(itemOptional.isPresent){
+                val item = itemOptional.get()
+                item.apply {
+                    unidades += itemRequest.unidades
+                }
+                if (itemService.edit(item)) {
+                    println("Se ha insertado el item " + item.nombre + " correctamente")
+                    Utilities.LineaSeparadora()
+                    return ResponseEntity(item, HttpStatus.OK)
+                } else {
+                    return ResponseEntity(HttpStatus.BAD_REQUEST)
+                }
+
+            }else{
+
+                val item = Item(
+                    nombre = itemRequest.nombre,
+                    unidades = itemRequest.unidades,
+                    polideportivo = polideportivo.get()
+                )
+                Utilities.LineaSeparadora();
+                println("Se va a registrar en el polideportivo " + item.polideportivo.nombre + " el item " + item.nombre)
+
+                if (itemService.add(item)) {
+                    println("Se ha insertado el item " + item.nombre + " correctamente")
+                    Utilities.LineaSeparadora()
+                    return ResponseEntity(item, HttpStatus.OK)
+                } else {
+                    return ResponseEntity(HttpStatus.BAD_REQUEST)
+                }
+            }
+
+        } catch (e: Exception) {
+            println(e.printStackTrace())
+            Utilities.LineaSeparadora();
+            return ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+        }
+    }
+    @PutMapping("/editar-item/{id}")
+    fun editarItemAPolideportivo(@PathVariable id: UUID, @RequestBody itemRequest: ItemRequest):ResponseEntity<Item>{
+        try {
 
 
+            val itemOptional = itemService.findById(id)
 
+            if(itemOptional.isPresent){
+                val item = itemOptional.get()
+                item.apply {
+                    nombre = itemRequest.nombre
+                    unidades = itemRequest.unidades
+                }
+                if (itemService.edit(item)) {
+                    println("Se ha editado el item " + item.nombre + " correctamente")
+                    Utilities.LineaSeparadora()
+                    return ResponseEntity(item, HttpStatus.OK)
+                } else {
+                    return ResponseEntity(HttpStatus.BAD_REQUEST)
+                }
+
+            }else{
+                return ResponseEntity(HttpStatus.NOT_FOUND)
+            }
+
+        } catch (e: Exception) {
+            println(e.printStackTrace())
+            Utilities.LineaSeparadora();
+            return ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+        }
+    }
+
+    @DeleteMapping("/eliminar-item/{id}")
+    fun eliminarItemAPolideportivo(@PathVariable id: UUID):ResponseEntity<Item>{
+        try {
+
+
+            val itemOptional = itemService.findById(id)
+
+            if(itemOptional.isPresent){
+
+                if (itemService.delete(id).isPresent) {
+                    println("Se ha eliminado el item " + itemOptional.get().nombre + " correctamente")
+                    Utilities.LineaSeparadora()
+                    return ResponseEntity(itemOptional.get(), HttpStatus.OK)
+                } else {
+                    return ResponseEntity(HttpStatus.BAD_REQUEST)
+                }
+
+            }else{
+                return ResponseEntity(HttpStatus.NOT_FOUND)
+            }
+
+        } catch (e: Exception) {
+            println(e.printStackTrace())
+            Utilities.LineaSeparadora();
+            return ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
+        }
+    }
 
 }

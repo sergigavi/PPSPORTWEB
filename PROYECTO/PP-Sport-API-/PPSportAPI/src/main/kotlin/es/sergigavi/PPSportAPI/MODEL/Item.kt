@@ -6,18 +6,13 @@ import lombok.Builder.Default
 import java.time.LocalDate
 import java.util.UUID
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Builder
 
 @Entity
 class Item(
 
     @Id
     @Column(name = "ID", unique = true)
-    var Id:UUID,
+    var id:UUID?=null,
 
     @Column(name = "nombre", unique = false, nullable = false, length = 100)
     var nombre:String,

@@ -26,10 +26,10 @@ data class Usuario (
     val fechaNacimiento: LocalDate,
 
     @Column(name = "email", unique = false, nullable = false, length = 40)
-    val email:String,
+    var email:String,
 
     @Column(name = "password", unique = false, nullable = false, length = 256)
-    val password:String,
+    var password:String,
 
     @Column(name = "rol", unique = false, nullable = false)
     val rol:Rol

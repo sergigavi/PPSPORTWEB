@@ -11,7 +11,7 @@ data class EquipoPartido(
 
     @ManyToOne
     @JoinColumn(name = "partido_id")
-    val partido: Partido,
+    var partido: Partido,
 
     @ManyToOne
     @JoinColumn(name = "equipo_id")

@@ -9,29 +9,31 @@ import java.util.UUID
 data class Partido(
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     val id:UUID?=null,
 
-    @Column( unique = false, nullable = false)
-    val fecha: LocalDateTime,
+    @Column( unique = false, nullable = true)
+    var fecha: LocalDateTime? = null,
 
     @OneToMany(mappedBy = "partido", cascade = [CascadeType.ALL], orphanRemoval = true)
     val jugadoresPartidos :MutableSet<JugadorPartido> = mutableSetOf(),
 
     @OneToMany(mappedBy = "partido", cascade = [CascadeType.ALL], orphanRemoval = true)
-    val equiposPartidos:MutableSet<EquipoPartido> = mutableSetOf(),
+    var equiposPartidos:MutableSet<EquipoPartido> = mutableSetOf(),
 
-    @ManyToOne(optional = true, cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @ManyToOne(optional = true, cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @JoinColumn(name = "torneo_id", unique = false, nullable = true)
-    val torneo: Torneo?=null,
+    val torneo: Torneo,
 
     @Column( unique = false, nullable = true)
     var resultado:String?=null,
+
+    val ronda:Int
+
     ){
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || javaClass != other.javaClass) return false
-        other as Pista
+        other as Partido
         return id == other.id // Comparar solo el id para evitar recursión
     }
 

@@ -1,15 +1,9 @@
 package es.sergigavi.PPSportAPI.MODEL
 
 import jakarta.persistence.*
-import lombok.*
 import java.time.LocalDateTime
 import java.util.UUID
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Builder
 
 @Entity
 data class Torneo(
@@ -39,17 +33,17 @@ data class Torneo(
     @OneToMany(mappedBy = "torneo", cascade = [CascadeType.ALL], fetch = FetchType.EAGER, orphanRemoval = true)
     val partidos: MutableSet<Partido> = mutableSetOf(),
 
-    @OneToMany(mappedBy = "torneo", cascade = [CascadeType.ALL], orphanRemoval = true)
+    @OneToMany(mappedBy = "torneo", cascade = [CascadeType.ALL], orphanRemoval = true,fetch = FetchType.EAGER)
     val jugadoresTorneo: MutableSet<JugadorTorneo> = mutableSetOf(),
 
-    @OneToMany(mappedBy = "torneo", cascade = [CascadeType.ALL], orphanRemoval = true)
+    @OneToMany(mappedBy = "torneo", cascade = [CascadeType.ALL], orphanRemoval = true,fetch = FetchType.EAGER)
     val equiposTorneo: MutableSet<EquipoTorneo> = mutableSetOf(),
 
     ){
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || javaClass != other.javaClass) return false
-        other as Pista
+        other as Torneo
         return id == other.id // Comparar solo el id para evitar recursión
     }
 

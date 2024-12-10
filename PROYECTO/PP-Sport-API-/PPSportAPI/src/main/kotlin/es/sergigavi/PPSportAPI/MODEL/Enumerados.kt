@@ -17,5 +17,5 @@ enum class Estado{
 }
 
 enum class DesenlacePartido{
-    EMPATE,DERROTA,VICTORIA
+    EMPATE,DERROTA,VICTORIA,TBD
 }

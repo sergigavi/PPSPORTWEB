@@ -5,10 +5,11 @@ import java.util.*
 
 data class PartidoDTO(
     val id: UUID,
-    val fecha: LocalDateTime,
-    val jugadoresPartidos :MutableSet<JugadorPartidoJDTO>,
+    val fecha: LocalDateTime?,
+    val jugadoresPartidos :MutableSet<JugadorPartidoPDTO>,
     val equiposPartidos:MutableSet<EquipoPartidoDTO>,
     val torneoID: UUID?,
-    val nombreTorneo:String,
+    val nombreTorneo:String?,
     var resultado:String?,
+    val ronda:Int
 )

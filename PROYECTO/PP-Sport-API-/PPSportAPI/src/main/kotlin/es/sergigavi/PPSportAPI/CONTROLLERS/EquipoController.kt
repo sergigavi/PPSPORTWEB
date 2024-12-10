@@ -1,8 +1,14 @@
 package es.sergigavi.PPSportAPI.CONTROLLERS
 
+import es.sergigavi.PPSportAPI.MODEL.DTO.EquipoDTO
+import es.sergigavi.PPSportAPI.MODEL.DTO.JugadorDTO
 import es.sergigavi.PPSportAPI.MODEL.REQUEST.EquipoRequest
 import es.sergigavi.PPSportAPI.MODEL.Equipo
+import es.sergigavi.PPSportAPI.MODEL.Jugador
+import es.sergigavi.PPSportAPI.MODEL.MAPPER.toDTO
+import es.sergigavi.PPSportAPI.MODEL.REQUEST.IdRequest
 import es.sergigavi.PPSportAPI.SERVICES.IEquipoService
+import es.sergigavi.PPSportAPI.SERVICES.IJugadorService
 import es.sergigavi.PPSportAPI.Utilities.Utilities
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -17,8 +23,12 @@ class EquipoController {
     @Autowired
     lateinit var equipoService:IEquipoService
 
+    @Autowired
+    lateinit var jugadorService: IJugadorService
+
+
     @GetMapping("/todos")
-    fun getAll(): ResponseEntity<Iterable<Equipo>> = ResponseEntity(this.equipoService.findAll(), HttpStatus.OK)
+    fun getAll(): ResponseEntity<Iterable<EquipoDTO>> = ResponseEntity(this.equipoService.findAll(), HttpStatus.OK)
 
     @GetMapping("/{id}")
     fun getEquipo(@PathVariable id: UUID): ResponseEntity<Equipo> {
@@ -91,5 +101,31 @@ class EquipoController {
         } else {
             ResponseEntity(HttpStatus.NOT_FOUND)
         }
+
+    @PostMapping("/{id}/unirse-a-equipo")
+    fun unirseAEquipo(@PathVariable id:UUID, @RequestBody idJugador:IdRequest):ResponseEntity<JugadorDTO>{
+
+        val jugadorOptional = jugadorService.findById(idJugador.id)
+
+        val equipoOptional = equipoService.findById(id)
+
+        if(jugadorOptional.isPresent && equipoOptional.isPresent){
+
+            val jugador = jugadorOptional.get()
+
+            jugador.equipos.add(equipoOptional.get())
+
+            return if(jugadorService.edit(jugador)){
+
+                ResponseEntity(jugador.toDTO(),HttpStatus.OK)
+
+            }else{
+                ResponseEntity(HttpStatus.CONFLICT)
+
+            }
+        }else{
+            return ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+    }
 
 }

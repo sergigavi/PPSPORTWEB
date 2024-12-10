@@ -8,7 +8,7 @@ interface IPistaService {
 
     fun add(pista: Pista): Boolean;
     fun edit(pista: Pista): Boolean;
-    fun findAll(): Iterable<Pista>;
+    fun findAll(): Iterable<PistaDTO>;
     fun findAllByPolideportivoId(polideportivoId:UUID):Iterable<PistaDTO>
     fun findById(pistaID: UUID): Optional<Pista>;
     fun existsById(pistaID: UUID): Boolean;

@@ -122,7 +122,7 @@ public partial class LoginPage : ContentPage
         }
         else
         {
-
+            await DisplayAlert("AVISO", "Se ha producido un error al iniciar sesión", "Entendido");
         }
 
         ai.IsVisible = false;

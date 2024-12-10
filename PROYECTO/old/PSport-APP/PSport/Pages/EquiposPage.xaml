@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSport.Pages.EquiposPage"
+             Appearing="ContentPage_Appearing"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+
+        <VerticalStackLayout Margin="5">
+
+            <Label Text="EQUIPOS:" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="10, 10"/>
+
+            <Image Margin="0, -25,0,-15" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="200" WidthRequest="200" Source="psportlogosinfondo.png" BackgroundColor="Transparent" />
+
+            <Label Text="Mis Equipos:" FontSize="20" FontAttributes="Bold" Margin="20,5"/>
+
+            <ListView x:Name="lvInfoMiEquipo" IsPullToRefreshEnabled="False" VerticalOptions="Center"
+SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvInfoMiEquipo_ItemSelected" RowHeight="80" BackgroundColor="Transparent" >
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <Grid Padding="0,0" BackgroundColor="Transparent" Margin="0, 1">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="180" WidthRequest="180" BackgroundColor="Transparent" Source="{Binding rutaimg}" />
+
+                                <Label x:Name="lblNombre"
+                        Grid.Column="1"
+                        FontFamily="MontserratMedium"
+                        Margin="0,0,0,0"
+                        TextColor="Black"
+                        FontSize="14"
+                        Text="{Binding nombre}"
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"/>
+
+                                <Label x:Name="lblDeporte"
+                        Grid.Column="2"
+                        FontFamily="MontserratMedium"
+                        Margin="0,0,0,0"
+                        TextColor="Black"
+                        FontSize="14"
+                        Text="{Binding deporte}"
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"/>
+
+                            </Grid>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+            <!--j-->
+
+            <Label Text="Listado de equipos" FontSize="20" FontAttributes="Bold" Margin="20,5"/>
+            <ListView x:Name="lvAllEquipos" IsPullToRefreshEnabled="False" VerticalOptions="Center"
+SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvInfoMiEquipo_ItemSelected" RowHeight="80" BackgroundColor="Transparent" >
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <Grid Padding="0,0" BackgroundColor="Transparent" Margin="0, 1">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="180" WidthRequest="180" BackgroundColor="Transparent" Source="{Binding rutaImg}" />
+
+                                <Label x:Name="lblNombre"
+                        Grid.Column="1"
+                        FontFamily="MontserratMedium"
+                        Margin="0,0,0,0"
+                        TextColor="Black"
+                        FontSize="14"
+                        Text="{Binding nombre}"
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"/>
+
+                                <Label x:Name="lblDeporte"
+                        Grid.Column="2"
+                        FontFamily="MontserratMedium"
+                        Margin="0,0,0,0"
+                        TextColor="Black"
+                        FontSize="14"
+                        Text="{Binding deporte}"
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"/>
+
+                            </Grid>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+    
+</ContentPage>

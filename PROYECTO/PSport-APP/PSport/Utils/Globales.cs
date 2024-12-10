@@ -24,7 +24,8 @@ namespace PSport.Utils
         //public static string URL_BASE_API = "http://192.168.1.143:9432/ppsport/api";
 
         //PRE
-        public static string URL_BASE_API = "https://glad-cuddly-shepherd.ngrok-free.app/ppsport/api";
+        //public static string URL_BASE_API = "https://glad-cuddly-shepherd.ngrok-free.app/ppsport/api";
+        public static string URL_BASE_API = "http://192.168.73.80:9432/ppsport/api";
 
 #endif
 
@@ -36,7 +37,8 @@ namespace PSport.Utils
         //public static string URL_BASE_API = "https://glad-cuddly-shepherd.ngrok-free.app/ppsport/api";
 
         //LOCAL
-        public static string URL_BASE_API = "http://192.168.1.143:9432/ppsport/api"; 
+        //public static string URL_BASE_API = "http://192.168.1.143:9432/ppsport/api"; 
+        public static string URL_BASE_API = "http://192.168.73.80:9432/ppsport/api"; 
 #endif
 
         public static Dictionary<string, string> _AppConfig = new Dictionary<string, string>()
@@ -60,6 +62,11 @@ namespace PSport.Utils
         //
         public static PolideportivoDTO? selectedPolideportivo = null;
         public static PistaDTO? selectedPista = null;
+        public static EquipoDTO? selectedEquipo = null;
+
+        //
+        public static dynamic? _infoSelectedJugador = null;
+        public static PartidoDTO? selectedPartidoADM= null;
 
     }
 

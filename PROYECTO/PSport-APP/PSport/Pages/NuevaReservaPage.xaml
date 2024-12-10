@@ -28,7 +28,8 @@
 
             <VerticalStackLayout x:Name="StackOpciones" IsEnabled="False" IsVisible="False" Spacing="5">
 
-                <Label x:Name="lblHorasLibres" Text="Horas Libres:"/>
+                <Label Text="Horas Ocupadas:" FontAttributes="Bold"/>
+                <Label x:Name="lblHorasOcupadas" Text="" FontSize="16" Margin="0, 0, 0, 5"/>
 
                 <Label Text="Hora inicio reserva:"/>
                 <TimePicker x:Name="pickerHoraInicio"/>

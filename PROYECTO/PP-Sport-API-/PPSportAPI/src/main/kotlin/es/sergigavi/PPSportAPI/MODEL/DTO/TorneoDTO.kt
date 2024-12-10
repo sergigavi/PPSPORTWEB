@@ -6,7 +6,7 @@ import java.util.*
 
 data class TorneoDTO(
 
-    val id: UUID,
+    val id: UUID?,
     val deporte: Deporte,
     var nombre: String,
     val tipoTorneo: TipoTorneo,
@@ -14,6 +14,6 @@ data class TorneoDTO(
     val fechaInicio: LocalDateTime,
     val fechaFin: LocalDateTime,
     val partidos: MutableSet<PartidoDTO>,
-    val equipoTorneos: MutableSet<EquipoTorneoDTO>,
+    val equiposTorneo: MutableSet<EquipoTorneoDTO>,
     val jugadores: MutableSet<JugadorTorneoTDTO>
     )

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.time.LocalDate
 import java.util.UUID
 
 @CrossOrigin
@@ -18,10 +17,10 @@ import java.util.UUID
 @RequestMapping("/ppsport/api/reservas")
 class ReservaController {
     @Autowired
-    lateinit var reservaService: IReservaService;
+    lateinit var reservaService: IReservaService
 
     @Autowired
-    lateinit var usuarioService: IUsuarioService;
+    lateinit var usuarioService: IUsuarioService
 
     @GetMapping("/todas")
     fun getAll(): ResponseEntity<Iterable<Reserva>> = ResponseEntity(this.reservaService.findAll(), HttpStatus.OK)
@@ -38,7 +37,7 @@ class ReservaController {
             }
         } catch (e: Exception) {
             println(e.printStackTrace())
-            Utilities.LineaSeparadora();
+            Utilities.LineaSeparadora()
             return ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
@@ -49,14 +48,14 @@ class ReservaController {
         try {
             val usuario = usuarioService.findById(usuarioID)
             if (usuario.isPresent) {
-                val reservas = reservaService.findByUsuario(usuario.get())
+                val reservas = reservaService.findAllByUsuario(usuario.get())
                 return ResponseEntity(reservas, HttpStatus.OK)
             } else {
                 return ResponseEntity(HttpStatus.BAD_REQUEST)
             }
         } catch (e: Exception) {
             println(e.printStackTrace())
-            Utilities.LineaSeparadora();
+            Utilities.LineaSeparadora()
             return ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
@@ -65,7 +64,7 @@ class ReservaController {
     fun crearReserva(@RequestBody reserva: ReservaRequest): ResponseEntity<Reserva> {
 
         try {
-            if (reserva.let {reservaService.existsByFechaAndHoraInicioAndPistaId(it.fecha,it.horaInicio,it.pistaID ) ||
+            if (reserva.let{reservaService.existsByFechaAndHoraInicioAndPistaId(it.fecha,it.horaInicio,it.pistaID ) ||
                         reservaService.existsByFechaAndHoraFinAndPistaId(it.fecha,it.horaFin,it.pistaID )}) {
                 return ResponseEntity(HttpStatus.CONFLICT)
             }

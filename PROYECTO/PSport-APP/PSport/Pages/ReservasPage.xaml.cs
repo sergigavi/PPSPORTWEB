@@ -31,6 +31,7 @@ public partial class ReservasPage : ContentPage
 
         this.BackgroundColor = Globales._paleta.color0;
 
+        lblNumResultados.TextColor = Globales._paleta.color3;
     }
 
     private async void CargarReservas()
@@ -45,6 +46,7 @@ public partial class ReservasPage : ContentPage
                 polideportivos = ConvertirPolideportivos(Polideportivos);
                 polideportivosFiltered = new List<PolideportivoDTO>(polideportivos);
                 lvPolideportivos.ItemsSource = polideportivosFiltered;
+                lblNumResultados.Text = "Resultados: " + polideportivosFiltered.Count;
             }
             else
             {
@@ -183,6 +185,8 @@ public partial class ReservasPage : ContentPage
         }
 
         lvPolideportivos.ItemsSource = polideportivosFiltered;
+
+        lblNumResultados.Text = "Resultados: " + polideportivosFiltered.Count;
 
     }
 

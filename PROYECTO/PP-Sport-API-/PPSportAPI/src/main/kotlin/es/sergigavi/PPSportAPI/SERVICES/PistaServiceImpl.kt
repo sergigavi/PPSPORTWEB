@@ -47,8 +47,8 @@ class PistaServiceImpl:IPistaService {
         return exito
     }
 
-    override fun findAll(): Iterable<Pista> {
-        return pistaDAO.findAll()
+    override fun findAll(): Iterable<PistaDTO> {
+        return pistaDAO.findAll().map { it.toDTO() }
     }
 
     override fun findAllByPolideportivoId(polideportivoId: UUID): Iterable<PistaDTO> {

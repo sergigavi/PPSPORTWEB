@@ -22,16 +22,16 @@ data class Equipo(
     @ManyToMany(mappedBy = "equipos")
     val jugadores: MutableSet<Jugador> = mutableSetOf(),
 
-    @OneToMany(mappedBy = "equipo", cascade = [CascadeType.ALL], orphanRemoval = true)
+    @OneToMany(mappedBy = "equipo", cascade = [CascadeType.ALL], orphanRemoval = true,fetch = FetchType.LAZY)
     val equipoTorneos: MutableSet<EquipoTorneo> = mutableSetOf(),
 
-    @OneToMany(mappedBy = "equipo", cascade = [CascadeType.ALL], orphanRemoval = true)
+    @OneToMany(mappedBy = "equipo", cascade = [CascadeType.ALL], orphanRemoval = true,fetch = FetchType.LAZY)
     val equipoPartidos: MutableSet<EquipoPartido> = mutableSetOf()
 ){
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || javaClass != other.javaClass) return false
-        other as Pista
+        other as Equipo
         return id == other.id // Comparar solo el id para evitar recursión
     }
 

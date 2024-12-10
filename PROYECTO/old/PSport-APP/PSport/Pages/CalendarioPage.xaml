@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSport.Pages.CalendarioPage"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             Appearing="ContentPage_Appearing">
+
+    <ScrollView Orientation="Vertical" BackgroundColor="Transparent" Margin="0">
+
+        <VerticalStackLayout Spacing="10" Padding="10,5">
+
+            <Image Margin="0, -25,0,-15" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="200" WidthRequest="200" Source="psportlogosinfondo.png" BackgroundColor="Transparent" />
+
+            <Grid x:Name="gridProximaReserva">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="lblProximaRes" Text="PRÓXIMA RESERVA" FontSize="18" FontAttributes="Bold" Margin="0,5,0,5"/>
+                
+                <VerticalStackLayout Grid.Row="1">
+                    <Label x:Name="lblDiaTitulo" Text="Día:" Margin="0" FontSize="16" FontAttributes="Bold"/>
+                    <Label x:Name="lblDia" FontSize="16"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+                    <Label x:Name="lblPistaTitulo" Text="Pista:" Margin="0" FontSize="16" FontAttributes="Bold"/>
+                    <Label x:Name="lblPista" FontSize="16"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="1" Grid.Column="2">
+                    <Label x:Name="lblPoliTitulo" Text="Polideportivo:" Margin="0" FontSize="16" FontAttributes="Bold"/>
+                    <Label x:Name="lblPoli" FontSize="16"/>
+                </VerticalStackLayout>
+
+            </Grid>
+            
+            <!---->
+
+            <Label Text="TODAS LAS RESERVAS:" FontSize="18" FontAttributes="Bold"/>
+
+            <ListView x:Name="lvMisReservas" IsPullToRefreshEnabled="False" VerticalOptions="Center" SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvMisReservas_ItemSelected" RowHeight="120" BackgroundColor="Transparent" >
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <Grid BackgroundColor="Transparent">
+                                <!--hora deporte pista polideportivo-->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=".50*" />
+                                    <RowDefinition Height=".50*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".40*" />
+                                    <ColumnDefinition Width=".60*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontFamily="MontserratMedium"
+                                Margin="0,0,0,0"
+                                TextColor="Black"
+                                FontSize="14"
+                                Text="{Binding fecha}"
+                                HorizontalOptions="Center" 
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
+
+                                <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontFamily="MontserratMedium"
+                                Margin="0,0,0,0"
+                                TextColor="Black"
+                                FontSize="14"
+                                Text="{Binding horaInicio}"
+                                HorizontalOptions="Center" 
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
+
+                                <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FontFamily="MontserratMedium"
+                                Margin="0,0,0,0"
+                                TextColor="Black"
+                                FontSize="14"
+                                Text="{Binding pista.nombre}"
+                                HorizontalOptions="Center" 
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
+
+                                <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontFamily="MontserratMedium"
+                                Margin="0,0,0,0"
+                                TextColor="Black"
+                                FontSize="14"
+                                Text="{Binding pista.nombrePolideportivo}"
+                                HorizontalOptions="Center" 
+                                VerticalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
+
+                            </Grid>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+            
+            <!--Reservas antiguas-->
+            <Label Text="HISTÓRICO DE RESERVAS:" FontSize="18" FontAttributes="Bold"/>
+
+            <ListView x:Name="lvHistorico" IsPullToRefreshEnabled="False" VerticalOptions="Center" SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvMisReservas_ItemSelected" RowHeight="120" BackgroundColor="Transparent" >
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <Grid BackgroundColor="Transparent">
+                                <!--hora deporte pista polideportivo-->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=".50*" />
+                                    <RowDefinition Height=".50*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".40*" />
+                                    <ColumnDefinition Width=".60*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontFamily="MontserratMedium"
+                    Margin="0,0,0,0"
+                    TextColor="Black"
+                    FontSize="14"
+                    Text="{Binding fecha}"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+
+                                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontFamily="MontserratMedium"
+                    Margin="0,0,0,0"
+                    TextColor="Black"
+                    FontSize="14"
+                    Text="{Binding horaInicio}"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+
+                                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontFamily="MontserratMedium"
+                    Margin="0,0,0,0"
+                    TextColor="Black"
+                    FontSize="14"
+                    Text="{Binding pista.nombre}"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+
+                                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontFamily="MontserratMedium"
+                    Margin="0,0,0,0"
+                    TextColor="Black"
+                    FontSize="14"
+                    Text="{Binding pista.nombrePolideportivo}"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+
+                            </Grid>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+    
+</ContentPage>

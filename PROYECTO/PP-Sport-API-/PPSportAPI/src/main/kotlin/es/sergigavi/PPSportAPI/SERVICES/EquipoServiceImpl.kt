@@ -1,6 +1,8 @@
 package es.sergigavi.PPSportAPI.SERVICES
 
+import es.sergigavi.PPSportAPI.MODEL.DTO.EquipoDTO
 import es.sergigavi.PPSportAPI.MODEL.Equipo
+import es.sergigavi.PPSportAPI.MODEL.MAPPER.toDTO
 import es.sergigavi.PPSportAPI.REPOSITORIES.EquipoRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -37,8 +39,8 @@ class EquipoServiceImpl:IEquipoService {
         return exito
     }
 
-    override fun findAll(): Iterable<Equipo> {
-        return equipoDAO.findAll()
+    override fun findAll(): Iterable<EquipoDTO> {
+        return equipoDAO.findAll().map { it.toDTO() }
     }
 
     override fun findById(equipoID: UUID): Optional<Equipo> {

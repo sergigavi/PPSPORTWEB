@@ -66,7 +66,21 @@ public partial class NuevaReservaPage : ContentPage
             return;
         }
 
+        if (this.datePickerDia.Date < DateTime.Now)
+        {
+            await DisplayAlert("AVISO", "No puedes realizar una reserva con fecha anterior al día de hoy", "Entendido");
+            return;
+        }
+
         reservasHechas = await Globales._APICONTROLLER.getReservasDePistaByFecha(Globales.selectedPista.id, this.datePickerDia.Date);
+
+        string horasOcupadas = "";
+        foreach (var reserva in reservasHechas)
+        {
+            horasOcupadas += reserva.horaInicio.Substring(0, 5) + "-" + reserva.horaFin.Substring(0, 5) + "  ";
+        }
+
+        lblHorasOcupadas.Text = horasOcupadas; 
 
         StackOpciones.IsEnabled = true;
         StackOpciones.IsVisible = true;

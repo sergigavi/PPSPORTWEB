@@ -14,7 +14,7 @@
 
     <VerticalStackLayout Spacing="10" Margin="5" Padding="20, 5" HorizontalOptions="Center">
 
-        <VerticalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0, 20, 0, 0">
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0, 20, 0, 20">
 
             <Label Text="¡Bienvenido a PPSPORT!" FontSize="28" HorizontalTextAlignment="Center"/>
             <Label Text="Tu aplicación de reserva de pistas" FontSize="16" HorizontalTextAlignment="Center"/>

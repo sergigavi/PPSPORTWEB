@@ -26,7 +26,7 @@ class SecurityConfiguration (
 //                it.requestMatchers("**")
 //                    .permitAll()
                 //Llamadas que no requieren autenticación
-                it.requestMatchers("/ppsport/api/auth","/ppsport/api/auth/refresh", "/ppsport/api/polideportivos/cargar-polideportivos-api")
+                it.requestMatchers("/ppsport/api/auth","/ppsport/api/auth/refresh","/ppsport/api/usuarios/init", "/ppsport/api/polideportivos/cargar-polideportivos-api")
                     .permitAll()
                     .requestMatchers(HttpMethod.POST,"/ppsport/api/usuarios/registrar")
                     .permitAll()

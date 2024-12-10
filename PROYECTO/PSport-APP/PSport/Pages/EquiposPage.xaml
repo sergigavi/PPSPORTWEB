@@ -38,7 +38,7 @@ SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvInfoMiEquipo_ItemSelecte
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Image Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="180" WidthRequest="180" BackgroundColor="Transparent" Source="{Binding rutaimg}" />
+                                <Image Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="75" WidthRequest="75" BackgroundColor="Transparent" Source="{Binding rutaimg}" />
 
                                 <Label x:Name="lblNombre"
                         Grid.Column="1"
@@ -78,7 +78,7 @@ SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvInfoMiEquipo_ItemSelecte
 
             <Label Text="Listado de equipos" FontSize="20" FontAttributes="Bold" Margin="20,5"/>
             <ListView x:Name="lvAllEquipos" IsPullToRefreshEnabled="False" VerticalOptions="Center"
-SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvInfoMiEquipo_ItemSelected" RowHeight="80" BackgroundColor="Transparent" >
+SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvAllEquipos_ItemSelected" RowHeight="80" BackgroundColor="Transparent" >
 
                 <ListView.ItemTemplate>
 
@@ -98,7 +98,7 @@ SelectionMode="Single" Margin="5,5,5,5" ItemSelected="lvInfoMiEquipo_ItemSelecte
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Image Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="180" WidthRequest="180" BackgroundColor="Transparent" Source="{Binding rutaImg}" />
+                                <Image Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="75" WidthRequest="75" BackgroundColor="Transparent" Source="{Binding img}" />
 
                                 <Label x:Name="lblNombre"
                         Grid.Column="1"

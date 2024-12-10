@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui.Behaviors;
 using PSport.Model.DTOs;
 using PSport.Pages;
+using PSport.Pages.Admin;
 using PSport.Utils;
 
 namespace PSport
@@ -96,6 +97,21 @@ namespace PSport
         private async void ContentPage_Appearing(object sender, EventArgs e)
         {
 
+            try
+            {
+                string rolUser = Globales._LoggedUser.rol;
+
+                if ( rolUser == "ADMIN")
+                {
+                    btnAdm.IsEnabled = true;
+                    btnAdm.IsVisible = true;
+                }
+            }
+            catch (Exception exc)
+            {
+
+            }
+
             this.Behaviors.Add(new StatusBarBehavior
             {
                 StatusBarColor = Globales._paleta.color2
@@ -126,6 +142,10 @@ namespace PSport
             btnTorneos.BackgroundColor = Globales._paleta.color3;
             btnTorneos.TextColor = Globales._paleta.color0;
             btnTorneos.BorderColor = Globales._paleta.color2;
+
+            btnAdm.BackgroundColor = Globales._paleta.color3;
+            btnAdm.TextColor = Globales._paleta.color0;
+            btnAdm.BorderColor = Globales._paleta.color2;
 
             //
             lblNombre.Text = $"¡Hola {Globales._LoggedUser.nombre}!";
@@ -192,6 +212,16 @@ namespace PSport
 
             await Navigation.PushAsync(new LoginPage());
         }
+
+        private async void btnAdm_Clicked(object sender, EventArgs e)
+        {
+            await btnAdm.ScaleTo(1.075, 250);
+            await btnAdm.ScaleTo(1, 500);
+
+            await Navigation.PushAsync(new AdmMenu());
+        }
+
+
     }
 
 }

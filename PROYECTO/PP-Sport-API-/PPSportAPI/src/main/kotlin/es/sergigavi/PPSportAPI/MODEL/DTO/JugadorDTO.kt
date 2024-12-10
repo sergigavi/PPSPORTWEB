@@ -6,7 +6,7 @@ import java.util.*
 data class JugadorDTO (
     val id: UUID,
     val deporteFavorito: Deporte?,
-    val equipos:MutableSet<EquipoDTO>?,
+    val equipos:MutableSet<EquipoJDTO>?,
     val polideportivoAsociadoId: UUID?,
     val usuarioID: UUID,
     val torneos:MutableSet<JugadorTorneoJDTO>,

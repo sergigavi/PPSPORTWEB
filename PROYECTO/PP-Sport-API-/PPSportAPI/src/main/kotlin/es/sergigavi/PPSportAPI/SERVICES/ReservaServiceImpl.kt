@@ -9,29 +9,27 @@ import es.sergigavi.PPSportAPI.REPOSITORIES.PistaRepository
 import es.sergigavi.PPSportAPI.REPOSITORIES.ReservaRepository
 import es.sergigavi.PPSportAPI.REPOSITORIES.UsuarioRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.LocalTime
 import java.util.*
 
 @Service
 class ReservaServiceImpl : IReservaService {
     @Autowired
-    lateinit var reservaDAO: ReservaRepository;
+    lateinit var reservaDAO: ReservaRepository
 
     @Autowired
-    lateinit var usuarioDAO: UsuarioRepository;
+    lateinit var usuarioDAO: UsuarioRepository
 
     @Autowired
-    lateinit var pistaDAO: PistaRepository;
+    lateinit var pistaDAO: PistaRepository
 
     override fun add(reservaRequest: ReservaRequest): Pair<Boolean,Reserva?> {
 
-        var exito = false
         var respuesta:Pair<Boolean,Reserva?> = Pair(false,null)
         var usuario = Optional.empty<Usuario>()
-        val usuarios = usuarioDAO.findAll()
 
         if(usuarioDAO.existsById(reservaRequest.usuarioID)){
 
@@ -50,9 +48,7 @@ class ReservaServiceImpl : IReservaService {
                 pista = pista.get()
             )
             try {
-                reservaDAO.save(reserva);
-
-
+                reservaDAO.save(reserva)
                 respuesta = Pair(true,reserva)
             } catch (e: Exception) {
                 println("Error en servicio 'Add', añadiendo un jugador nuevo." + e.printStackTrace())
@@ -85,7 +81,7 @@ class ReservaServiceImpl : IReservaService {
             reservaDAO.deleteById(reservaID)
             exito = true
         }
-        return exito;
+        return exito
     }
 
 
@@ -98,12 +94,14 @@ class ReservaServiceImpl : IReservaService {
     }
 
 
-    override fun findByUsuario(usuario: Usuario): Iterable<ReservaDTO> {
-        return reservaDAO.findByUsuario(usuario).map { it.toDTO() }
+    override fun findAllByUsuario(usuario: Usuario): Iterable<ReservaDTO> {
+        val orden = Sort.by(Sort.Order.asc("fecha"), Sort.Order.asc("horaInicio"))
+        return reservaDAO.findAllByUsuario(usuario, orden).map { it.toDTO() }
     }
 
-    override fun findByFechaAndPistaId(fecha: LocalDate, pistaID: UUID): Iterable<ReservaDTO> {
-        return reservaDAO.findByFechaAndPistaId(fecha, pistaID).map { it.toDTO() }
+    override fun findAllByFechaAndPistaId(fecha: LocalDate, pistaID: UUID): Iterable<ReservaDTO> {
+        val orden = Sort.by(Sort.Order.asc("horaInicio"))
+        return reservaDAO.findAllByFechaAndPistaId(fecha, pistaID,orden).map { it.toDTO() }
     }
 
 

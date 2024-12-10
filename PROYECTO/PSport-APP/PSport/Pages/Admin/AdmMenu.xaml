@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSport.Pages.Admin.AdmMenu"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             Appearing="ContentPage_Appearing">
+    
+    <ScrollView>
+
+        <VerticalStackLayout Margin="40,20" Spacing="20">
+
+            <Image Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="240" WidthRequest="240" Source="psportlogosinfondo.png" />
+
+            <Label x:Name="lblNombre" Text="Bienvenid@ ADMIN" HorizontalOptions="Center" FontSize="22" FontAttributes="Bold" Margin="0,-10,0,10"/>
+
+            <Button x:Name="btnEquiposADM" Text="Equipos (ADM)" Clicked="btnEquiposADM_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4"/>
+
+            <Button x:Name="btnPistasADM" Text="Pistas (ADM)" Clicked="btnPistasADM_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4"/>
+
+            <Button x:Name="btnTorneosADM" Text="Torneos (ADM)" Clicked="btnTorneosADM_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4"/>
+            
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+    
+</ContentPage>

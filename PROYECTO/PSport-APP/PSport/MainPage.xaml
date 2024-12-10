@@ -31,7 +31,8 @@
             <Button x:Name="btnEquipos" Text="Equipos" Clicked="btnEquipos_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4"/>
 
             <Button x:Name="btnTorneos" Text="Torneos" Clicked="btnTorneos_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4"/>
-
+            
+            <Button x:Name="btnAdm" IsVisible="False" IsEnabled="False" Text="ADMINISTRACIÓN" Clicked="btnAdm_Clicked" FontSize="20" CornerRadius="25" BorderWidth="1.75" FontAttributes="Italic"/>
 
         </VerticalStackLayout>
         

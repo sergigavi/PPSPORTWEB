@@ -14,17 +14,19 @@
 
             <Label Text="Seleccione el polideportivo donde desea realizar la reserva:" FontFamily="MontserratMedium" FontAttributes="Bold" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="18" Margin="20, 15, 20, 5"/>
 
-            <ActivityIndicator x:Name="aiCarga" Color="ForestGreen" IsRunning="True" IsEnabled="True" IsVisible="True"/>
-
             <ScrollView Orientation="Horizontal">
 
-                <HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="15" Margin="15,5">
 
                     <Entry x:Name="entryBusqueda" WidthRequest="200" Placeholder="Búsqueda..." TextChanged="entryBusqueda_TextChanged"/>
-                    
+
+                    <Label x:Name="lblNumResultados" Text="" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
                 </HorizontalStackLayout>
 
             </ScrollView>
+
+            <ActivityIndicator x:Name="aiCarga" Color="ForestGreen" IsRunning="True" IsEnabled="True" IsVisible="True"/>
 
             <ListView x:Name="lvPolideportivos" IsPullToRefreshEnabled="False" VerticalOptions="Center"
     SelectionMode="Single" Margin="5,5,5,25" ItemSelected="lvPolideportivos_ItemSelected" RowHeight="140" HasUnevenRows="False" BackgroundColor="Transparent" >

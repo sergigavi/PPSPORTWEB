@@ -215,7 +215,7 @@
 
             </ListView>
 
-
+            <Button x:Name="btnReservas" Text="Nueva reserva" Clicked="btnReservas_Clicked" FontSize="18" CornerRadius="25" BorderWidth="1.4" Margin="20,5"/>
 
         </VerticalStackLayout>
 

@@ -53,9 +53,6 @@ data class Polideportivo(
     @JsonIgnore
     var inventario: MutableSet<Item> = mutableSetOf(),
 
-//    @OneToMany(mappedBy = "polideportivo",cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-//    @JsonManagedReference
-//    var inventario: MutableSet<Item> = mutableSetOf(),
 
     @OneToMany(mappedBy = "polideportivoAsociado",cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @JsonManagedReference

@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository
 import java.util.*
 
 interface JugadorRepository : CrudRepository<Jugador, UUID> {
-
+    fun findByUsuarioId(usuarioId: UUID):Optional<Jugador>
 
 }

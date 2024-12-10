@@ -12,6 +12,7 @@ namespace PSport.Model.DTOs
         public Guid id { get; set; }
         public string nombre { get; set; }
         public string deporte { get; set; }
+        public string img { get; set; }
         public List<dynamic> jugadores { get; set; }
         public List<dynamic> equipoTorneos { get; set; }
         public List<dynamic> equipoPartidos { get; set; }

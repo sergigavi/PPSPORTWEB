@@ -1,5 +1,6 @@
 using CommunityToolkit.Maui.Behaviors;
 using PSport.Utils;
+using System.Dynamic;
 
 namespace PSport.Pages;
 
@@ -25,7 +26,7 @@ public partial class PerfilPage : ContentPage
         btnEditar.BorderColor = Globales._paleta.color2;
     }
 
-    private void ContentPage_Appearing(object sender, EventArgs e)
+    private async void ContentPage_Appearing(object sender, EventArgs e)
     {
         cargarPaleta();
 
@@ -57,14 +58,49 @@ public partial class PerfilPage : ContentPage
         {
             exc.ToString();
         }
+
+        try
+        {
+            string idusuario = Globales._LoggedUser.id;
+            Globales._infoSelectedJugador = await Globales._APICONTROLLER.getAllInfoJugadorByIdUsuario(idusuario);
+        }
+        catch (Exception exc)
+        {
+
+            exc.ToString();
+        }
     }
 
     private async void btnEditar_Clicked(object sender, EventArgs e)
     {
         //Obtengo los cambios
+        string iduser = Globales._LoggedUser.id;
 
+        if (entryNuevaPass1.Text == null || entryNuevaPass2.Text == null)
+        {
+            await DisplayAlert("AVISO", "Debes introducir la nueva contraseña dos veces","Entendido");
+            return;
+        }
 
-        await Globales._APICONTROLLER.EditarPerfil();
+        if (entryNuevaPass1.Text != entryNuevaPass2.Text)
+        {
+            await DisplayAlert("AVISO", "Las contraseñas deben coincidir", "Entendido");
+            return;
+        }
+
+        dynamic nuevoUser = new ExpandoObject();
+        nuevoUser.email = lblCorreo.Text;
+        nuevoUser.password = entryNuevaPass1.Text;
+
+        var res = await Globales._APICONTROLLER.EditarPerfil(iduser, nuevoUser);
+
+        string newid = res.id;
+
+        if (newid != null)
+        {
+            await DisplayAlert("AVISO", "Usuario modificado correctamente", "Entendido");
+        }
+
     }
 
     private void PickerPaleta_SelectedIndexChanged(object sender, EventArgs e)

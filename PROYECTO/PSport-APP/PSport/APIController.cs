@@ -3,6 +3,7 @@ using PSport.Model.DTOs;
 using PSport.Utils;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,23 +39,48 @@ namespace PSport
 
         private async void ComprobarToken()
         {
-            if (Globales._FechaCaducidadAccessToken == DateTime.Now)
+            try
             {
-                if (Globales._FechaCaducidadRefreshToken == DateTime.Now)
+                if (Globales._FechaCaducidadAccessToken <= DateTime.Now)
                 {
-                    //Todo caducado, cerrar sesion
+                    if (Globales._FechaCaducidadRefreshToken <= DateTime.Now)
+                    {
+                        //Todo caducado, cerrar sesion
+                        throw new Exception("TOKEN CADUCADO");
+                    }
+                    else
+                    {
+                        //Token de acceso caducado, uso el refresh para renovarlo
+                        await RenovarAccessToken();
+                    }
+
                 }
-                else
-                {
-                    //Token de acceso caducado, uso el refresh para renovarlo
-                    await RenovarAccessToken();
-                }
-                
+            }
+            catch (Exception exc)
+            {
+
             }
         }
 
         private async Task RenovarAccessToken()
         {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + "/auth/refresh";
+
+                dynamic body = new ExpandoObject();
+                body.token = Globales._CurrentRefreshToken;
+
+                var data = JsonConvert.SerializeObject(body, Newtonsoft.Json.Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                var httpContent = new StringContent(data, Encoding.UTF8, "application/json");
+
+                var res = await HttpClient.PostAsync(url, httpContent);
+
+                Globales._CurrentAccessToken = res.ToString();
+            }
+            catch (Exception ex) { }
 
         }
 
@@ -265,7 +291,7 @@ namespace PSport
 
                     if (resObj != null)
                     {
-                        var obj = JsonConvert.DeserializeObject(resObj);
+                        var obj = JsonConvert.DeserializeObject<dynamic>(resObj);
 
                         if (obj != null)
                         {
@@ -363,9 +389,66 @@ namespace PSport
             }
         }
 
-        public async Task EditarPerfil()
+        public async Task<dynamic> EditarPerfil(string iduser, dynamic nuevouser)
         {
+            this.ComprobarToken();
 
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/usuarios/{iduser}";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var data = JsonConvert.SerializeObject(nuevouser, Newtonsoft.Json.Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                var httpContent = new StringContent(data, Encoding.UTF8, "application/json");
+
+                var res = await HttpClient.PutAsync(url, httpContent);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+
+                    if (resObj != null)
+                    {
+                        var obj = JsonConvert.DeserializeObject(resObj);
+
+                        if (obj != null)
+                        {
+                            return obj;
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    HttpClient.CancelPendingRequests();
+                    string resErr = resObj;
+
+                    if (resErr != null)
+                    {
+                        return JsonConvert.DeserializeObject(resErr);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+
+                }
+            }
+            catch (Exception exc)
+            {
+                HttpClient.CancelPendingRequests();
+                Console.WriteLine(exc.Message);
+                return null;
+            }
         }
 
         public async Task<dynamic> Reservar(dynamic? newReserva)
@@ -501,7 +584,7 @@ namespace PSport
 
             try
             {
-                string url = Globales.URL_BASE_API + $"/polideportivo/pistas/{id}/reservas?={date}";
+                string url = Globales.URL_BASE_API + $"/polideportivos/pistas/{id}/reservas?fecha={date.ToString("yyyy-MM-dd")}";
 
                 this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
 
@@ -512,6 +595,402 @@ namespace PSport
                 if (res.IsSuccessStatusCode)
                 {
                     return JsonConvert.DeserializeObject<List<ReservaRequest>>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<dynamic> UnirseAEquipo(string idUsuario, string idEquipo)
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/equipos/{idEquipo}/unirse-a-equipo";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                dynamic body = new ExpandoObject();
+                body.id = idUsuario;
+
+                var data = JsonConvert.SerializeObject(body, Newtonsoft.Json.Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                var httpContent = new StringContent(data, Encoding.UTF8, "application/json");
+
+                var res = await HttpClient.PostAsync(url, httpContent);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<dynamic>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<dynamic> getInfoJugadorByIdUser(string idUser)
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/usuarios/{idUser}/jugador";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var res = await HttpClient.GetAsync(url);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<List<EquipoDTO>>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<List<EquipoDTO>> getEquiposByIdUsuario(Guid id)
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/equipos/todos";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var res = await HttpClient.GetAsync(url);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<List<EquipoDTO>>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<List<EquipoDTO>> getAllEquipos()
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/equipos/todos";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var res = await HttpClient.GetAsync(url);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<List<EquipoDTO>>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<List<TorneoDTO>> getAllTorneos()
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/torneos/todos";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var res = await HttpClient.GetAsync(url);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<List<TorneoDTO>>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<dynamic> getAllInfoJugadorByIdUsuario(string idusuario)
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/usuarios/{idusuario}/jugador";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var res = await HttpClient.GetAsync(url);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<dynamic> crearTorneo(TorneoDTO2 torneo)
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/torneos/crear";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var data = JsonConvert.SerializeObject(torneo, Newtonsoft.Json.Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                var httpContent = new StringContent(data, Encoding.UTF8, "application/json");
+
+                var res = await HttpClient.PostAsync(url, httpContent);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<dynamic>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        internal async Task<dynamic> crearEquipo(EquipoRequest equipo)
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/equipos/registrar";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var data = JsonConvert.SerializeObject(equipo, Newtonsoft.Json.Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                var httpContent = new StringContent(data, Encoding.UTF8, "application/json");
+
+                var res = await HttpClient.PostAsync(url, httpContent);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<dynamic>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<dynamic> crearPolideportivo(PolideportivoDTO newPoli)
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/polideportivos/registrar";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var data = JsonConvert.SerializeObject(newPoli, Newtonsoft.Json.Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                var httpContent = new StringContent(data, Encoding.UTF8, "application/json");
+
+                var res = await HttpClient.PostAsync(url, httpContent);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<dynamic>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<dynamic> registrarPistaEnPolideportivo(Guid id, dynamic newPista)
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/polideportivos/{id}/registrar-pista";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var data = JsonConvert.SerializeObject(newPista, Newtonsoft.Json.Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                var httpContent = new StringContent(data, Encoding.UTF8, "application/json");
+
+                var res = await HttpClient.PostAsync(url, httpContent);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<dynamic>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<List<PartidoDTO>> getAllPartidos()
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/partidos/todos";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var res = await HttpClient.GetAsync(url);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return JsonConvert.DeserializeObject<List<PartidoDTO>>(resObj);
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception exc)
+            {
+                exc.ToString();
+                return null;
+            }
+        }
+
+        public async Task<dynamic> anotarResultadoPartido(Guid? id, string text)
+        {
+            //TODO:
+            return null;
+        }
+
+        public async Task<string> eliminarPolideportivoById(string id)
+        {
+            this.ComprobarToken();
+
+            try
+            {
+                string url = Globales.URL_BASE_API + $"/polideportivos/{id}";
+
+                this.HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Globales._CurrentAccessToken);
+
+                var res = await HttpClient.DeleteAsync(url);
+
+                string resObj = await res.Content.ReadAsStringAsync();
+
+                if (res.IsSuccessStatusCode)
+                {
+                    return resObj;
                 }
                 else
                 {

@@ -10,8 +10,10 @@ import java.util.*
 
 data class EquipoPartidoDTO(
     val id: UUID,
-    val partido: Partido,
-    val equipo: Equipo,
+    val partidoId: UUID,
+    val equipoId: UUID,
+    val nombreEquipo:String,
     var resultado: String?,
-    var desenlacePartido: DesenlacePartido
+    var desenlacePartido: DesenlacePartido,
+    val ronda:Int
 )

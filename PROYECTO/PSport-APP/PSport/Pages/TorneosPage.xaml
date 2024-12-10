@@ -2,21 +2,114 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PSport.Pages.TorneosPage"
+             Appearing="ContentPage_Appearing"
              Title=""
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False">
-    <VerticalStackLayout>
+    
+    <ScrollView>
 
         <!--Listado de torneos donde se está o ha estado, con resultados. Los antiguos salen abajo y primero salen los futuros-->
-        <VerticalStackLayout x:Name="vslMisTorneos">
+        <VerticalStackLayout x:Name="vslMisTorneos" Margin="25,10">
 
-            <VerticalStackLayout x:Name="SiguienteTorneo">
-                
+            <Image Margin="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="240" WidthRequest="240" Source="psportlogosinfondo.png" BackgroundColor="Transparent" />
+
+            <VerticalStackLayout>
+
+                <Label Text="Mis torneos: " FontAttributes="Bold" FontSize="20"/>
+
+                <ListView x:Name="lvMisTorneos" IsPullToRefreshEnabled="False" VerticalOptions="Center"
+                    SelectionMode="Single" Margin="0" ItemSelected="lvMisTorneos_ItemSelected" RowHeight="140" HasUnevenRows="False" BackgroundColor="Transparent" >
+
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <ViewCell>
+
+                                <Grid Padding="0,0" BackgroundColor="Transparent" Margin="0, 1">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".60*" />
+                                        <RowDefinition Height=".40*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".45*" />
+                                        <ColumnDefinition Width=".55*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label x:Name="lblNombre"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        FontFamily="MontserratMedium"
+                                        Margin="0,0,0,0"
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        Text="{Binding nombre}"
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"/>
+
+                                    <Label x:Name="lblFecha"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontFamily="MontserratMedium"
+                                        Margin="0,0,0,0"
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        Text="{Binding fechaInicio}"
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"/>
+
+                                    <Label x:Name="lblResultado"
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        FontFamily="MontserratMedium"
+                                        Margin="0,0,0,0"
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        Text="{Binding estado}"
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"/>
+
+                                    <Label x:Name="lblDeporte"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        FontFamily="MontserratMedium"
+                                        Margin="0,0,0,0"
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        Text="{Binding deporte}"
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"/>
+
+
+
+                                </Grid>
+
+                            </ViewCell>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
             </VerticalStackLayout>
 
             <VerticalStackLayout>
 
-                <ListView x:Name="lvMisTorneos" IsPullToRefreshEnabled="False" VerticalOptions="Center"
+                <Label Text="Listado de todos los torneos: " FontAttributes="Bold" FontSize="20"/>
+
+                <ListView x:Name="lvAllTorneos" IsPullToRefreshEnabled="False" VerticalOptions="Center"
 SelectionMode="Single" Margin="0" ItemSelected="lvMisTorneos_ItemSelected" RowHeight="140" HasUnevenRows="False" BackgroundColor="Transparent" >
 
                     <ListView.ItemTemplate>
@@ -57,7 +150,7 @@ SelectionMode="Single" Margin="0" ItemSelected="lvMisTorneos_ItemSelected" RowHe
                                         Margin="0,0,0,0"
                                         TextColor="Black"
                                         FontSize="14"
-                                        Text="{Binding fecha}"
+                                        Text="{Binding fechaInicio}"
                                         HorizontalOptions="Center" 
                                         VerticalOptions="Center"
                                         HorizontalTextAlignment="Center"
@@ -70,7 +163,7 @@ SelectionMode="Single" Margin="0" ItemSelected="lvMisTorneos_ItemSelected" RowHe
                                         Margin="0,0,0,0"
                                         TextColor="Black"
                                         FontSize="14"
-                                        Text="{Binding resultado}"
+                                        Text="{Binding estado}"
                                         HorizontalOptions="Center" 
                                         VerticalOptions="Center"
                                         HorizontalTextAlignment="Center"
@@ -89,7 +182,7 @@ SelectionMode="Single" Margin="0" ItemSelected="lvMisTorneos_ItemSelected" RowHe
                                         HorizontalTextAlignment="Center"
                                         VerticalTextAlignment="Center"/>
 
-                                    
+
 
                                 </Grid>
 
@@ -100,16 +193,103 @@ SelectionMode="Single" Margin="0" ItemSelected="lvMisTorneos_ItemSelected" RowHe
                     </ListView.ItemTemplate>
 
                 </ListView>
-                
+
             </VerticalStackLayout>
 
-        </VerticalStackLayout>
-        
-        <!--Listado de todos los torneos donde se puede solicitar acceso de inscripción-->
-        <VerticalStackLayout x:Name="vslTorneosInscribibles">
-            
-            
+            <!--Listado de todos los torneos donde se puede solicitar acceso de inscripción-->
+            <!--<VerticalStackLayout x:Name="resultados anteriores">
+
+                <Label Text="Torneos pasados: " FontAttributes="Bold" FontSize="20"/>
+
+                <ListView x:Name="lvTorneosPasados" IsPullToRefreshEnabled="False" VerticalOptions="Center"
+SelectionMode="Single" Margin="0" ItemSelected="lvMisTorneos_ItemSelected" RowHeight="140" HasUnevenRows="False" BackgroundColor="Transparent" >
+
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <ViewCell>
+
+                                <Grid Padding="0,0" BackgroundColor="Transparent" Margin="0, 1">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".60*" />
+                                        <RowDefinition Height=".40*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".45*" />
+                                        <ColumnDefinition Width=".55*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label x:Name="lblNombre"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        FontFamily="MontserratMedium"
+                                        Margin="0,0,0,0"
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        Text="{Binding nombre}"
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"/>
+
+                                    <Label x:Name="lblFecha"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontFamily="MontserratMedium"
+                                        Margin="0,0,0,0"
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        Text="{Binding fechaInicio}"
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"/>
+
+                                    <Label x:Name="lblResultado"
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        FontFamily="MontserratMedium"
+                                        Margin="0,0,0,0"
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        Text="{Binding estado}"
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"/>
+
+                                    <Label x:Name="lblDeporte"
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        FontFamily="MontserratMedium"
+                                        Margin="0,0,0,0"
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        Text="{Binding deporte}"
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalTextAlignment="Center"/>
+
+
+
+                                </Grid>
+
+                            </ViewCell>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </VerticalStackLayout>-->
+
         </VerticalStackLayout>
 
-    </VerticalStackLayout>
+    </ScrollView>
+    
 </ContentPage>

@@ -1,0 +1,887 @@
+{
+	"info": {
+		"_postman_id": "4b40ed25-6545-4c2f-910f-4fcfcf8da98a",
+		"name": "PPSport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28195460",
+		"_collection_link": "https://lunar-resonance-557343.postman.co/workspace/PPSport~0a11b681-da33-4318-9836-6c0fdacf5ce7/collection/27881459-4b40ed25-6545-4c2f-910f-4fcfcf8da98a?action=share&source=collection_link&creator=28195460"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\":\"X4084873G\",\r\n    \"nombre\":\"Alex\",\r\n    \"apellido1\":\"Pop\",\r\n    \"apellido2\":null,\r\n    \"fechaNacimiento\":\"2001-08-28\",\r\n    \"email\":\"vanualexp@gmail.com\",\r\n    \"password\":\"123qwe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/usuarios/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"usuarios",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\":\"X4084873G\",\r\n    \"nombre\":\"Alex\",\r\n    \"apellido1\":\"Pop\",\r\n    \"apellido2\":null,\r\n    \"fechaNacimiento\":\"2001-08-28\",\r\n    \"email\":\"vanualexp@gmail.com\",\r\n    \"password\":\"123qwe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/usuarios/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"usuarios",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Init usuarios",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/usuarios/init",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"usuarios",
+								"init"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Polideportivos",
+			"item": [
+				{
+					"name": "All Polideportivos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Init Poli+Pistas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/cargar-polideportivo-con-pistas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"cargar-polideportivo-con-pistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Pistas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/pistas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"pistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Pistas de Polideportivo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/0497c3bb-3173-49a0-b395-63ccfbdb33d9/pistas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"0497c3bb-3173-49a0-b395-63ccfbdb33d9",
+								"pistas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Polideportivo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/a406ae1a-c502-4f00-8b3b-b3699f5ddce6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"a406ae1a-c502-4f00-8b3b-b3699f5ddce6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Polideportivo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Polideportivo de mi casa\",\r\n    \"direccion\":\"Calle de mi casa 42\",\r\n    \"localidad\":\"Perales de Tajuña\",\r\n    \"cp\":\"28540\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Pista",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Polideportivo de mi casa\",\r\n    \"direccion\":\"Calle de mi casa 42\",\r\n    \"localidad\":\"Perales de Tajuña\",\r\n    \"cp\":\"28540\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Polideportivo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Polideportivo de mi casa\",\r\n    \"direccion\":\"Calle de mi casa 42\",\r\n    \"localidad\":\"Perales de Tajuña\",\r\n    \"cp\":\"28540\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/a406ae1a-c502-4f00-8b3b-b3699f5ddce6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"a406ae1a-c502-4f00-8b3b-b3699f5ddce6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Polideportivo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/a406ae1a-c502-4f00-8b3b-b3699f5ddce6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"a406ae1a-c502-4f00-8b3b-b3699f5ddce6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Polideportivos API Mad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://datos.madrid.es/egob/catalogo/200215-0-instalaciones-deportivas.json",
+							"protocol": "https",
+							"host": [
+								"datos",
+								"madrid",
+								"es"
+							],
+							"path": [
+								"egob",
+								"catalogo",
+								"200215-0-instalaciones-deportivas.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Importar Polideportivos desde API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/polideportivos/cargar-polideportivos-api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"polideportivos",
+								"cargar-polideportivos-api"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservas",
+			"item": [
+				{
+					"name": "All Reservas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/reservas/todas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"reservas",
+								"todas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hacer Reserva",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaInicio\":\"2024-11-28T20:30:00\",\r\n    \"fechaFin\":\"2024-11-28T22:00:00\",\r\n    \"pistaID\":\"0003a478-0944-456e-a067-cf71a3cc9c17\",\r\n    \"usuarioID\":\"4f88d666-0118-4c55-bb5f-cdd8f315fc41\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/reservas/nueva",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"reservas",
+								"nueva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reserva",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/reservas/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"reservas",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reserva byusuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/reservas/todas/idusuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"reservas",
+								"todas",
+								"idusuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Auth",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"vanualexp@gmail.com\",\r\n    \"password\":\"123qwe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYWNhLmh1ZXRlc0Bmcml0by5lcyIsImlhdCI6MTczMTE1OTQ3MSwiZXhwIjoxNzMxMjQ1ODcxfQ.MZU6LLcm54EahoHVGvD6y56Go010jKBcU88W01A02GA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Equipos",
+			"item": [
+				{
+					"name": "All Equipos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/equipos/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"equipos",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Equipo by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/equipos/add8c52f-286f-40a8-9efd-4f24475d1c52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"equipos",
+								"add8c52f-286f-40a8-9efd-4f24475d1c52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Equipo by Id Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/equipos/jugador/idJugador",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"equipos",
+								"jugador",
+								"idJugador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Equipo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Equipo de mi cama\",\n    \"deporte\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/equipos/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"equipos",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Equipo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"de473ed6-7b4b-4b35-b5c9-d8511ab73f31\",\r\n    \"nombre\": \"Equipo de mi casa\",\r\n    \"deporte\": 4,\r\n    \"jugadores\": [],\r\n    \"torneos\": [],\r\n    \"partidos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/equipos/de473ed6-7b4b-4b35-b5c9-d8511ab73f31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"equipos",
+								"de473ed6-7b4b-4b35-b5c9-d8511ab73f31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Equipo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/equipos/de473ed6-7b4b-4b35-b5c9-d8511ab73f31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"equipos",
+								"de473ed6-7b4b-4b35-b5c9-d8511ab73f31"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Torneos",
+			"item": [
+				{
+					"name": "All Torneos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/torneos/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"torneos",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Torneos Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/torneos/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"torneos",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Torneo by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/torneos/add8c52f-286f-40a8-9efd-4f24475d1c52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"torneos",
+								"add8c52f-286f-40a8-9efd-4f24475d1c52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Torneo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deporte\":0,\r\n    \"nombre\":\"Torneo de pega\",\r\n    \"tipoTorneo\":0,\r\n    \"fechaInicio\":\"2024-11-28T20:30:00\",\r\n    \"fechaFin\":\"2024-11-29T20:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/torneos/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"torneos",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Torneo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"a624e29c-d687-49fa-be82-e4630a47665d\",\r\n    \"deporte\": \"TENIS\",\r\n    \"nombre\": \"Torneo de pega\",\r\n    \"tipoTorneo\": \"LIGA\",\r\n    \"estado\": \"CREADO\",\r\n    \"fechaInicio\": \"2024-11-28T20:30:00\",\r\n    \"fechaFin\": \"2024-11-29T20:30:00\",\r\n    \"partidos\": [],\r\n    \"jugadores\": [],\r\n    \"equipos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9432/ppsport/api/torneos/de473ed6-7b4b-4b35-b5c9-d8511ab73f31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9432",
+							"path": [
+								"ppsport",
+								"api",
+								"torneos",
+								"de473ed6-7b4b-4b35-b5c9-d8511ab73f31"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

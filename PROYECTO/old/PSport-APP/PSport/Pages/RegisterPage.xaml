@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSport.Pages.RegisterPage"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+
+        <VerticalStackLayout Spacing="10" Margin="30, 10" >
+
+            <Label Margin="0, 20,0,0" Text="REGISTRO USUARIO" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+
+            <ImageButton VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" HeightRequest="160" WidthRequest="160" Source="psportlogosinfondo.png" BackgroundColor="Transparent" Margin="-30" />
+
+            <Entry x:Name="entryDNI" Placeholder="DNI" PlaceholderColor="Grey" Margin="0, 0,0,0" TextChanged="entryDNI_TextChanged" MaxLength="10"/>
+            <Entry x:Name="entryNombre" Placeholder="Nombre" PlaceholderColor="Grey" />
+            <Entry x:Name="entryApellido1" Placeholder="Apellido 1" PlaceholderColor="Grey" />
+            <Entry x:Name="entryApellido2" Placeholder="Apellido 2" PlaceholderColor="Grey" />
+            <!--<Entry x:Name="entryFechaNac" Placeholder="Fecha Nacimiento (yyyy-mm-dd)" PlaceholderColor="Grey" />-->
+            <Label Text="Fecha Nacimiento:" TextColor="DarkGrey" Margin="3,0,0,0" FontSize="13"/>
+            <DatePicker x:Name="pickerFechaNac" TextColor="Grey" Margin="0,-10,0,0"/>
+            <Entry x:Name="entryUsuario" Placeholder="Email (Usuario)" Keyboard="Email" PlaceholderColor="Grey"/>
+            <Entry x:Name="entryContraseña" Placeholder="Contraseña" IsPassword="True" PlaceholderColor="Grey" TextChanged="entryContraseña_TextChanged"/>
+            <Entry x:Name="entryContraseña2" Placeholder="Repetir Contraseña" IsPassword="True" PlaceholderColor="Grey" TextChanged="entryContraseña_TextChanged"/>
+
+            <Button x:Name="btnRegistrarse" Text="Registrarse" Clicked="btnRegistrarse_Clicked"  Padding="0" FontSize="18" Margin="0,15,0,10"  CornerRadius="25" BorderWidth="1.4" />
+
+            <Button x:Name="btnLogin" Text="Iniciar Sesión" Clicked="btnLogin_Clicked" TextColor="White" FontSize="18" Padding="0" CornerRadius="25" BorderWidth="1.4" />
+
+        </VerticalStackLayout>
+        
+    </ScrollView>
+
+    
+        
+</ContentPage>

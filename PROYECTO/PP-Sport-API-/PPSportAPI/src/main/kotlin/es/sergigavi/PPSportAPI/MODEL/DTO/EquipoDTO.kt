@@ -13,6 +13,6 @@ data class EquipoDTO(
     val deporte: Deporte,
     val jugadores: MutableSet<JugadorDTO>,
     val equipoTorneos: MutableSet<EquipoTorneoDTO>,
-    val equiopoPartidos: MutableSet<EquipoPartido>
+    val equipoPartidos: MutableSet<EquipoPartidoDTO>
 
 )

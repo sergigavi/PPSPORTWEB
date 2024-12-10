@@ -4,6 +4,7 @@ import java.util.*
 
 data class JugadorTorneoTDTO(
     val id: UUID,
-    val jugador: JugadorDTO,
+    val jugadorId: UUID,
+    val nombreJugador:String,
     var puntos:Int=0,
 )

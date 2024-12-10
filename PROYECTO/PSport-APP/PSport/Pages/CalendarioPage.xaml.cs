@@ -58,10 +58,20 @@ public partial class CalendarioPage : ContentPage
         lblPistaTitulo.TextColor = Globales._paleta.color3;
         lblPoliTitulo.TextColor = Globales._paleta.color3;
 
+        btnReservas.BackgroundColor = Globales._paleta.color3;
+        btnReservas.TextColor = Globales._paleta.color0;
+        btnReservas.BorderColor = Globales._paleta.color2;
+
     }
 
     private void lvMisReservas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
 
+    }
+
+    private async void btnReservas_Clicked(object sender, EventArgs e)
+    {
+        //await Navigation.PopAsync();
+        await Navigation.PushAsync(new ReservasPage());
     }
 }

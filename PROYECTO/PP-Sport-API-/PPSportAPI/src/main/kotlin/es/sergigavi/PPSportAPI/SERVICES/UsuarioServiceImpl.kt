@@ -21,7 +21,7 @@ class UsuarioServiceImpl(private val encoder:PasswordEncoder): IUsuarioService {
             this.usuarioDAO.save(encodedUser);
             exito = true
         }catch (e: Exception){
-            println("Error en servicio 'Add', añadiendo un jugador nuevo." + e.printStackTrace())
+            println("Error en servicio 'Add', añadiendo un usuario nuevo." + e.printStackTrace())
         }
 
         return exito

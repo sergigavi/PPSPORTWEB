@@ -50,6 +50,12 @@
             <Label Text="Email:" Margin="3,0,0,-20" FontSize="15" FontAttributes="Bold"/>
             <Entry x:Name="lblCorreo" FontSize="15"/>
 
+            <Label Text="Nueva Contraseña:" Margin="3,0,0,-20" FontSize="15" FontAttributes="Bold"/>
+            <Entry x:Name="entryNuevaPass1" FontSize="15" IsPassword="True"/>
+
+            <Label Text="Repetir nueva Contraseña:" Margin="3,0,0,-20" FontSize="15" FontAttributes="Bold"/>
+            <Entry x:Name="entryNuevaPass2" FontSize="15" IsPassword="True"/>
+
             <Button x:Name="btnEditar" Clicked="btnEditar_Clicked" Text="Editar Perfil" CornerRadius="25" BorderWidth="1.4" Margin="20" FontSize="18"/>
             
         </VerticalStackLayout>

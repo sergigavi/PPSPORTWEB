@@ -2,11 +2,46 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PSport.Pages.Admin.AdmGestionPistas"
-             Title="">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Appearing="ContentPage_Appearing"
+            Title=""
+            Shell.NavBarIsVisible="False"
+            NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+
+        <VerticalStackLayout Spacing="15" Margin="30, 20">
+
+            <Label Margin="0, 20,0,0" Text="GESTIÓN POLIDEPORTIVOS Y PISTAS ADMIN" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+
+            <Label Text="Nuevo Polideportivo:" FontSize="16" FontAttributes="Bold"/>
+            <Entry x:Name="entryNombre" Placeholder="Nombre" PlaceholderColor="Grey" />
+            <Entry x:Name="entryDireccion" Placeholder="Dirección" PlaceholderColor="Grey" />
+            <Entry x:Name="entryLocalidad" Placeholder="Localidad" PlaceholderColor="Grey" />
+            <Entry x:Name="entrycp" Placeholder="Código postal" PlaceholderColor="Grey" />
+
+            <Label Text="Hora Apertura:"/>
+            <TimePicker x:Name="pickerHoraApertura" />
+
+            <Label Text="Hora Cierre:"/>
+            <TimePicker x:Name="pickerHoraCierre" />
+
+            <Button x:Name="btnAnnadirPolideportivo" Text="Añadir Polideportivo" Clicked="btnAnnadirPolideportivo_Clicked"  Padding="0" FontSize="18" Margin="0,15,0,10"  CornerRadius="25" BorderWidth="1.4" />
+
+            <Label Text="Nueva pista, seleccione Polideportivo:" FontSize="16" FontAttributes="Bold"/>
+            <Picker x:Name="pickerPolideportivos" SelectedIndexChanged="pickerPolideportivos_SelectedIndexChanged" />
+
+            <Entry x:Name="entryNombrePista" Placeholder="Nombre de la pista" PlaceholderColor="Grey" />
+            <Picker x:Name="pickerTipoPista"/>
+
+            <Button x:Name="btnAnnadirPista" Text="Añadir Pista" Clicked="btnAnnadirPista_Clicked"  Padding="0" FontSize="18" Margin="0,15,0,10"  CornerRadius="25" BorderWidth="1.4" />
+
+            <Label Text="Seleccione Polideportivo a eliminar:" FontSize="16" FontAttributes="Bold"/>
+            <Picker x:Name="pickerPolideportivosEliminables" SelectedIndexChanged="pickerPolideportivosEliminables_SelectedIndexChanged" />
+
+            <Button x:Name="btnBorrarPolideportivo" Text="Eliminar polideportivo" Clicked="btnBorrarPolideportivo_Clicked"  Padding="0" FontSize="18" Margin="0,15,0,10"  CornerRadius="25" BorderWidth="1.4" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+    
 </ContentPage>
